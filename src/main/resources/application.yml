@@ -1,0 +1,31 @@
+application.data-dir: ${DATA_DIR:images-bookingrooms-api}
+server.port: 8081
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DB_HOST:localhost}:3306/bookingrooms
+    username: root
+    password: P@ssw0rd
+  jpa:
+    hibernate.ddl-auto: create-drop
+    generate-ddl: true
+    show-sql: true
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
+  messages.basename: i18n/messages
+  mail:
+    protocol: smtp
+    host: smtp.gmail.com
+    port: 587
+    username: vargoadventure@gmail.com
+    password: cobaemailspringboot
+    properties:
+      mail:
+        smtp:
+          auth: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+          starttls:
+            enable: true
+            required: true
+
