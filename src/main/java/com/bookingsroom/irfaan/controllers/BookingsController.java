@@ -62,7 +62,7 @@ public class BookingsController {
 
 
     @PostMapping //Controller membuat transaksi booking
-    public ResponseMessage<BookingsResponse> addBookings(@RequestBody @Valid BookingsRequest model) throws ParseException {
+    public ResponseMessage<BookingsResponse> addBookings(@RequestBody @Valid BookingsRequest model) throws ParseException, MessagingException {
         Users user = usersService.findById(model.getUserId());
         Rooms room = roomsService.findById(model.getRoomId());
         if (model.getTotalPerson() > room.getRoomCapacity()) {
@@ -75,6 +75,10 @@ public class BookingsController {
         entity.setTotalPerson(model.getTotalPerson());
         entity.setBookingTime(bookingDate);
         entity = bookingsService.save(entity);
+
+        mailService.sendEmailBookings(entity);
+        mailService.sendEmailMustCheckIn(entity); //Mengirim email ketika tanggal system sesuai dengan tanggal booking-nya
+
         BookingsResponse data = modelMapper.map(entity, BookingsResponse.class);
         return ResponseMessage.success(data);
     }
@@ -96,8 +100,11 @@ public class BookingsController {
         entity.setTotalPerson(model.getTotalPerson());
         entity.setBookingTime(bookingDate);
         entity = bookingsService.save(entity);
+
+        //
         mailService.sendEmailBookings(entity);
         mailService.sendEmailMustCheckIn(entity); //Mengirim email ketika tanggal system sesuai dengan tanggal booking-nya
+
         BookingsResponse data = modelMapper.map(entity, BookingsResponse.class);
         return ResponseMessage.success(data);
     }

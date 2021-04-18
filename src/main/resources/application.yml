@@ -1,5 +1,7 @@
-application.data-dir: ${DATA_DIR:images-bookingrooms-api}
 server.port: 8081
+firebase:
+  bucket-name: booking-room-d926a.appspot.com
+  image-url: https://storage.googleapis.com/${firebase.bucket-name}/%s
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -12,6 +14,10 @@ spring:
     show-sql: true
     properties.hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
   messages.basename: i18n/messages
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
   mail:
     protocol: smtp
     host: smtp.gmail.com
@@ -28,4 +34,42 @@ spring:
           starttls:
             enable: true
             required: true
+
+#FIREBASE CONFIG
+#FIREBASE_BUCKET_NAME: booking-room-d926a.appspot.com
+#FIREBASE_PROJECT_ID: booking-room-d926a
+#FIREBASE_TYPE: service_account
+#FIREBASE_PRIVATE_KEY_ID: 2452dd17bbbb8092d4bf80b603d384498f04a131
+#FIREBASE_PRIVATE_KEY: MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCJE9PCyZzc0X4v
+#  ab1u5xKxB7qhxMlGzW6Mi5qAKUT9MCd5IRI9y5THyj7fd7fIU+Hbehz+MyQfzTRN
+#  Wb86rMn8vhXx3AxrD+97V5Tw7nDYyvLpp27f6FGAeB6mV0lBMaEha91/Apv9r/RL
+#  1Y5qgJeut6tDOyfX/31ZNO43dOZ93bPtQDwLQOfHfqC0UaFNwa/fvChehSBlq5MM
+#  IwVrMZxiO2vzFu4zV/0uiOWYKTiec2aDBwbRS1Xo2Pn5s5dHwfF1XI5SVNwJJi99
+#  MGGmnJv/3Jm5Ji/l2pJkcyJCR/DwVyLlEEqAlb4FoaBwupJnzyzLEX6O4hvuVOOc
+#  5vlH9vKdAgMBAAECggEAOgFiYDB5iPW7bGvV5fqxLamEH9VKiQQAbkfa+rW8BFne
+#  skK82dpunHaoUV7zLbnVPs83OphAhpaKtdqu8bDRjnqPhbekp59oKyz+EVAM/6gt
+#  z5Ly95vy9SafbatNC+Ho+eAPrCHaCalt+rMlX0sIJL6DIeGD9EKgc+HSljQJHyRV
+#  3Np38XPL1pegiK2gGYYjZajPjNjbX7OcXnen3RvWusscmfzMR6FtfSiS1zqFdyvE
+#  KT/kG2A0pQtLW2gfrH645Ra17YDrN7kXjwb5un8rBX/xOMOsCVSVq82flgVDAjjd
+#  ZwCkLIXBPa0PbQuuItaHgjQ7o8MK3ATZArE1XWKS/wKBgQC/lfV9c29k61m+L6rZ
+#  da2b5xCnDmO/qCNUv+CxgJqIHcTqH+MDwAiKJwlFETmLgdzdNPYPtyAESA+5IGOW
+#  +0z8usPY8PyGS1/OJXYqhveZYbf2RCknaeJlRU/NGyo+VHy5eu8Fx6FpxQKYUad/
+#  sfGWugKCvxl6N9qTAje7bCefdwKBgQC3KkO1LGm4Hpbn0r10Qpo+Jl71mFT1fSje
+#  Fio49GRDhRrTSb+y98dQOQutBxshK/4VIc/pKADwXhG+4hPbBJp1Rw9Ms+w8wZRy
+#  aOfz6s/HCf1hpZ5Y9xGmOYpr3nugwGGv3yuElNMi7nw2Fh6RlO17xRSGEdgRyn5P
+#  xxaltQDLiwKBgFOW6B8uKGIN1YAHaDGtCGxHKprYymiqwY+OkEih5cqRwoKsGu5d
+#  8NvmIENEOqlFpcnV+63rpkp37nRFT25mgraZ/i0/J86oQEq/SYlQjeMcIZmPL62E
+#  o0SwMxs4SPwc/LYojvUknqZ5UKKIrd4nE1NCISpOmp0alYEirJJXpAoNAoGBAILh
+#  0ovtdoW4ZgC1V+dxiCIM7SH1fhAFJWS81eLoz5Rn0mlUc4UBBQ1QFgXH5BzqAJ89
+#  EAH9Md6QeYG6rpF8Upqm8knO72nisZ6nU8e57Eq/2q0h2Wqc8aGj0EOQMSsHDUbM
+#  453TcqOtYliLqcBBeQlOJIJA0fK0jVmYW5iBJFZNAoGBAJWMzHcYB5pUWOHyUWbU
+#  EDVgkk1A4ykQCC/XFfJZI2gt0e4IHnRnEc1H4JIvl4fsofwQoTaF3ZV9tK2Y/s/C
+#  Jo8gP3USL+LHnDsRMjPPE6fKFDFulf0fjQc4Z6tiU0EByBCowoUvVmLpJ4ITw27v
+#  WBZoNIcauFiqv86xKq5LI7KC
+#FIREBASE_CLIENT_EMAIL: firebase-adminsdk-hm0hf@booking-room-d926a.iam.gserviceaccount.com
+#FIREBASE_CLIENT_ID: 102364852205931990966
+#FIREBASE_AUTH_URI: https://accounts.google.com/o/oauth2/auth
+#FIREBASE_TOKEN_URI: https://oauth2.googleapis.com/token
+#FIREBASE_AUTH_PROVIDER_X509_CERT_URL: https://www.googleapis.com/oauth2/v1/certs
+#FIREBASE_CLIENT_X509_CERT_URL: https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-hm0hf%40booking-room-d926a.iam.gserviceaccount.com
 

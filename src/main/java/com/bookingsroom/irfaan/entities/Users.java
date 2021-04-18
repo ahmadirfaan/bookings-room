@@ -1,6 +1,7 @@
 package com.bookingsroom.irfaan.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 
 @Table(name = "users")
 @Entity
@@ -10,6 +11,7 @@ public class Users extends AbstractEntity<Integer> {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Email(message = "Please Enter a Valid Email Address")
     @Column(nullable = false)
     private String email;
 

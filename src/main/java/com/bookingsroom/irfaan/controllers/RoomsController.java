@@ -1,19 +1,23 @@
 package com.bookingsroom.irfaan.controllers;
 
 import com.bookingsroom.irfaan.entities.Rooms;
+import com.bookingsroom.irfaan.entities.Users;
 import com.bookingsroom.irfaan.exceptions.EntityNotFoundException;
 import com.bookingsroom.irfaan.models.PageSearch;
 import com.bookingsroom.irfaan.models.PagedList;
 import com.bookingsroom.irfaan.models.ResponseMessage;
 import com.bookingsroom.irfaan.models.request.RoomsRequest;
 import com.bookingsroom.irfaan.models.response.RoomsResponse;
+import com.bookingsroom.irfaan.services.FileService;
 import com.bookingsroom.irfaan.services.RoomsService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,12 +32,34 @@ public class RoomsController {
     @Autowired
     private ModelMapper modelMapper;
 
+    @Autowired
+    private FileService fileService;
+
     @PostMapping //Controller mendaftarkan atau menambahkan data tentang ruangan
     public ResponseMessage<Rooms> registerRooms(@RequestBody @Valid RoomsRequest model) {
         Rooms entity = modelMapper.map(model, Rooms.class);
-        entity.setPhoto("Link Photo terbaru : wkaowkoakew");
         entity = roomsService.save(entity);
         return ResponseMessage.success(entity);
+    }
+
+    @PostMapping("/upload/{id}")
+    public ResponseMessage uploadPhotoRoom(@PathVariable Integer id, @Valid MultipartFile file) throws IOException {
+        Rooms entity = roomsService.findById(id);
+        if (entity == null) {
+            throw new EntityNotFoundException();
+        }
+
+        try {
+            String fileName = fileService.save(file);
+            String imageUrl = fileService.getImageUrl(fileName);
+            entity.setPhoto(imageUrl);
+            entity = roomsService.save(entity);
+            return new ResponseMessage(200,"Success Upload File", "url file : " + imageUrl);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseMessage.error(404,"Upload File Not Success");
+        }
+
     }
 
     @PutMapping("/{id}") //Controller untuk merubah data dari ruangan yaitu nama ruangan dan kapasitas dari ruangan

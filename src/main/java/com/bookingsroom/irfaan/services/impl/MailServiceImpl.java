@@ -65,7 +65,7 @@ public class MailServiceImpl implements MailService {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage,true);
         mimeMessageHelper.setFrom("vargoadventure@gmail.com");
-        mimeMessageHelper.setSubject("Pemberitahuan untuk Check-In dengan kode pesanana :  " + booking.getId());
+        mimeMessageHelper.setSubject("Pemberitahuan untuk Check-In dengan kode pesananan :  " + booking.getId());
         mimeMessageHelper.setTo(email);
         mimeMessageHelper.setSentDate(dateSentEmailNotification); //Set Pengiriman Email sesuai dengan waktu pemesanan
         String content = "<h3>Data Pesanan Anda adalah sebagai berikut : </h3>" +
