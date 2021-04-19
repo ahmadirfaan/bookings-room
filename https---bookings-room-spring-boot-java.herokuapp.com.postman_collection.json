@@ -1,0 +1,467 @@
+{
+	"info": {
+		"_postman_id": "806341cb-7d65-4593-b417-430ee7a737e2",
+		"name": "https://bookings-room-spring-boot-java.herokuapp.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"irfaan.hibatullah@gmail.com\",\n    \"password\" : \"hibatullah22\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bookings-room-spring-boot-java.herokuapp.com/users",
+							"protocol": "https",
+							"host": [
+								"bookings-room-spring-boot-java",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete User By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://bookings-room-spring-boot-java.herokuapp.com/users/delete/1",
+							"protocol": "https",
+							"host": [
+								"bookings-room-spring-boot-java",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit User By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"irfaan.hibatullah@gmail.com\",\n    \"password\" : \"gantipassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bookings-room-spring-boot-java.herokuapp.com/users/1",
+							"protocol": "https",
+							"host": [
+								"bookings-room-spring-boot-java",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://bookings-room-spring-boot-java.herokuapp.com/users?size=5",
+							"protocol": "https",
+							"host": [
+								"bookings-room-spring-boot-java",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Photo User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/ahmadirfaan/Downloads/IMG20210311095403.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8081/users/upload/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"upload",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rooms",
+			"item": [
+				{
+					"name": "Add Room",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roomName\" : \"Ruangan 3\",\n    \"roomCapacity\" : \"40\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bookings-room-spring-boot-java.herokuapp.com/rooms",
+							"protocol": "https",
+							"host": [
+								"bookings-room-spring-boot-java",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete Room By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://bookings-room-spring-boot-java.herokuapp.com/rooms/delete/1",
+							"protocol": "https",
+							"host": [
+								"bookings-room-spring-boot-java",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"rooms",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Room By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roomName\" : \"Ruangan 1\",\n    \"roomCapacity\" : \"100\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bookings-room-spring-boot-java.herokuapp.com/rooms/1",
+							"protocol": "https",
+							"host": [
+								"bookings-room-spring-boot-java",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"rooms",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Rooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://bookings-room-spring-boot-java.herokuapp.com/rooms",
+							"protocol": "https",
+							"host": [
+								"bookings-room-spring-boot-java",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Photo Room",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/ahmadirfaan/Downloads/scopefunction.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://bookings-room-spring-boot-java.herokuapp.com/rooms/upload/1",
+							"protocol": "https",
+							"host": [
+								"bookings-room-spring-boot-java",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"rooms",
+								"upload",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "Add Booking Room",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\" : 1,\n    \"roomId\" : 2,\n    \"totalPerson\" : 10,\n    \"bookingTime\" : \"2021-04-21\",\n    \"noted\" : \"Ini catatan\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bookings-room-spring-boot-java.herokuapp.com/bookings",
+							"protocol": "https",
+							"host": [
+								"bookings-room-spring-boot-java",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete Booking By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://bookings-room-spring-boot-java.herokuapp.com/bookings/delete/5",
+							"protocol": "https",
+							"host": [
+								"bookings-room-spring-boot-java",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"bookings",
+								"delete",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Booking By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\" : 1,\n    \"roomId\" : 2,\n    \"totalPerson\" : 20,\n    \"bookingTime\" : \"2021-04-23\",\n    \"noted\" : \"Ruangannya tolong yah dibersihkan kali\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bookings-room-spring-boot-java.herokuapp.com/bookings/1",
+							"protocol": "https",
+							"host": [
+								"bookings-room-spring-boot-java",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"bookings",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Data Bookings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://bookings-room-spring-boot-java.herokuapp.com/bookings",
+							"protocol": "https",
+							"host": [
+								"bookings-room-spring-boot-java",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guest Check-In",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://bookings-room-spring-boot-java.herokuapp.com/bookings/1/check-in",
+							"protocol": "https",
+							"host": [
+								"bookings-room-spring-boot-java",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"bookings",
+								"1",
+								"check-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guest Check-Out",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://bookings-room-spring-boot-java.herokuapp.com/bookings/1/check-out",
+							"protocol": "https",
+							"host": [
+								"bookings-room-spring-boot-java",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"bookings",
+								"1",
+								"check-out"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GraphQL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\n    getUserById(id : 1) {\n        id\n        email\n        password\n        createdAt\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://bookings-room-spring-boot-java.herokuapp.com/graphql",
+					"protocol": "https",
+					"host": [
+						"bookings-room-spring-boot-java",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
