@@ -1,0 +1,53 @@
+schema {
+    query: Query
+}
+#type Mutation {
+#    createUsers(email: String!, password: String!) : Users
+#    createRoom(roomName: String!, roomCapacity: Int!) : Rooms
+#}
+
+type Query{
+    getAllUsers: [Users]
+    getAllRooms : [Rooms]
+    getAllBookings : [Bookings]
+}
+
+type Users {
+    createdAt : String,
+    updatedAt : String,
+    deletedAt : String,
+    id : Int!,
+    email : String,
+    password : String,
+    photo : String
+}
+
+type Rooms {
+    createdAt : String,
+    updatedAt : String,
+    deletedAt : String,
+    id : Int,
+    roomName : String,
+    roomCapacity: Int,
+    photo: String
+}
+
+type Bookings {
+    createdAt : String,
+    updatedAt : String,
+    deletedAt : String,
+    id : Int,
+#    userId : Users,
+#    roomId : Rooms,
+    totalPerson : Int,
+    bookingTime : String,
+    noted: String,
+    checkInTime: String,
+    checkOutTime : String
+}
+
+
+
+
+
+
