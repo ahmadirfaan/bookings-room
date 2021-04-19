@@ -10,9 +10,9 @@ firebase:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${DB_HOST:localhost}:3306/bookingrooms
-    username: root
-    password: P@ssw0rd
+    url: jdbc:mysql://freedb.tech/freedbtech_bookingsroom
+    username: freedbtech_ahmadirfaan
+    password: hibatullah22
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: true

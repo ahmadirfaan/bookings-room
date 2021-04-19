@@ -1,5 +1,6 @@
 server.port: 8081
 spring:
+  profiles: test
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:bookingrooms  #mem artinya adalah memori, berarti hanya dijalankan pada memori/RAM
