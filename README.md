@@ -3,6 +3,8 @@
 1.  Project merupakan sebuah aplikasi tentang pemesanan sebuah ruangan. Dengan menggunakan teknologi Spring Boot Java membangun REST API
 2.  Penyimpanan gambar menggunakan Firebase
 3.  Pemesan akan mendapatkan email terkait detail pesanan ruangan
+4.  Aplikasi sudah di deploy pada heroku dengan url : 
+    https://bookings-room-spring-boot-java.herokuapp.com/ dan menggunakan hosting mysql pada https://freedb.tech
 
 
 
