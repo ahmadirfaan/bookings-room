@@ -82,3 +82,69 @@
 
   - Check Out data rooms : `PUT /bookings/{id}/check-out`
 
+# Dokumentasi GraphQL
+
+​	Pembuatan GraphQL mengikuti schema di bawah ini atau dalam folder `/main/resource/graphql/schema.graphqls`
+
+```graphql
+schema {
+    query: Query
+    mutation : Mutation
+}
+
+type Query{
+    getAllUsers: [Users]
+    getAllRooms : [Rooms]
+    getAllBookings : [Bookings]
+}
+
+type Bookings {
+    createdAt : String,
+    updatedAt : String,
+    deletedAt : String,
+    id : Int,
+    userId : Users,
+    roomId : Rooms,
+    totalPerson : Int,
+    bookingTime : String,
+    noted: String,
+    checkInTime: String,
+    checkOutTime : String
+}
+
+type Users {
+    createdAt : String,
+    updatedAt : String,
+    deletedAt : String,
+    id : Int!,
+    email : String,
+    password : String,
+    photo : String
+}
+
+type Rooms {
+    createdAt : String,
+    updatedAt : String,
+    deletedAt : String,
+    id : Int,
+    roomName : String,
+    roomCapacity: Int,
+    photo: String
+}
+
+type Mutation{
+    createUser(email: String!, password: String!) : Users
+    createRoom(roomName : String!, roomCapacity: Int!) : Rooms
+    createBooking(userId: Int!, roomId:Int, totalPerson:Int!, bookingTime:String!, noted: String!) : Bookings
+    updateUser(id: Int, email: String!, password: String!) : Users
+    updateRoom(id: Int, roomName : String!, roomCapacity: Int!) : Rooms
+    updateBooking(id : Int, userId: Int!, roomId:Int, totalPerson:Int!, bookingTime:String!, noted: String!) : Bookings
+    getUserById(id:Int!): Users
+    getRoomById(id:Int!) : Rooms
+    getBookingById(id:Int!) : Bookings
+    softDeleteUserById(id:Int!): Users
+    softDeleteRoomById(id:Int!) : Rooms
+    softDeleteBookingById(id:Int!) : Bookings
+}
+```
+
