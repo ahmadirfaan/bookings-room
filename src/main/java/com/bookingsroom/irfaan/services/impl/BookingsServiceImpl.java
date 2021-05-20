@@ -13,4 +13,5 @@ public class BookingsServiceImpl extends AbstractService<Bookings,Integer> imple
     public BookingsServiceImpl(BookingsRepository repository) {
         super(repository);
     }
+
 }
