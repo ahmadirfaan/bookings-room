@@ -12,7 +12,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://freedb.tech/freedbtech_bookingsroom
     username: freedbtech_ahmadirfaan
-    password: hibatullah22
+    password: 
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: true
